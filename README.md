@@ -1,6 +1,6 @@
 # line-simple-beacon-esp32
 
-LINE Simple Beacon for ESP32 (Arduino core)
+LINE Simple Beacon library for ESP32 (Arduino core)
 
 ## Getting Started
 
