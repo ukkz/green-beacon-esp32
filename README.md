@@ -2,6 +2,8 @@
 
 LINE Simple Beacon library for ESP32 (Arduino core)
 
+This is unofficial library for ESP32 boards, conforming to [LINE Simple Beacon (Official)](https://github.com/line/line-simple-beacon/blob/master/README.en.md).
+
 ## Getting Started
 
 1. Web: Create your LINE official account.  
