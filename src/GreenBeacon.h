@@ -1,10 +1,10 @@
 #ifndef ARDUINO_ARCH_ESP32
-#error Cannot use this LineSimpleBeacon library in except the environment "Arduino core for the ESP32"
+#error Cannot use this GreenBeacon library in except the environment "Arduino core for the ESP32"
 #endif
 #include <Arduino.h>
 #include <BLEDevice.h>
 
-class LineSimpleBeacon {
+class GreenBeacon {
   private:
     struct {
       char header_flags[2];
@@ -25,7 +25,7 @@ class LineSimpleBeacon {
     std::string getAdvPacket();
     bool adv_on;
   public:
-    LineSimpleBeacon(const char hwid[5], const String device_name = "LINE Simple Beacon");
+    GreenBeacon(const char hwid[5], const String device_name = "LINE Simple Beacon");
     void setMessage(const String message);
     void start();
     void stop();

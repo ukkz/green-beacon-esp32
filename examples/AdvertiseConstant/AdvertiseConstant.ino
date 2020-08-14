@@ -1,4 +1,4 @@
-#include "LineSimpleBeacon.h"
+#include "GreenBeacon.h"
 
 /**
  * 1. Web: Create your LINE official account
@@ -16,7 +16,7 @@
  */
 
 const char hwid[5] = {0x00, 0x00, 0x00, 0x00, 0x00};
-LineSimpleBeacon beacon = LineSimpleBeacon(hwid);
+GreenBeacon beacon = GreenBeacon(hwid);
 
 void setup() {
   beacon.setMessage("Hello"); // max 13 bytes

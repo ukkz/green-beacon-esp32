@@ -1,6 +1,6 @@
-#include "LineSimpleBeacon.h"
+#include "GreenBeacon.h"
 
-LineSimpleBeacon::LineSimpleBeacon(const char hwid[5], const String device_name) {
+GreenBeacon::GreenBeacon(const char hwid[5], const String device_name) {
   rawData.header_flags[0]        = 0x02;    // Length + AD_TYPE (flags)
   rawData.header_flags[1]        = 0x01;    // Length + AD_TYPE (flags)
   rawData.ad_type_flags          = 0x06;    // flags: LE General Discoverable Mode(2) + BR/EDR Not Supported(4)
@@ -24,11 +24,11 @@ LineSimpleBeacon::LineSimpleBeacon(const char hwid[5], const String device_name)
   adv_on = false;
 }
 
-std::string LineSimpleBeacon::getAdvPacket() {
+std::string GreenBeacon::getAdvPacket() {
   return std::string((char*)&rawData, sizeof(rawData));
 }
 
-void LineSimpleBeacon::setMessage(const String message) {
+void GreenBeacon::setMessage(const String message) {
   // pause advertising
   if (adv_on) advertising->stop();
   // message -> char array in the packet (max 13bytes)
@@ -45,12 +45,12 @@ void LineSimpleBeacon::setMessage(const String message) {
   if (adv_on) advertising->start();
 }
 
-void LineSimpleBeacon::start() {
+void GreenBeacon::start() {
   advertising->start();
   adv_on = true;
 }
 
-void LineSimpleBeacon::stop() {
+void GreenBeacon::stop() {
   advertising->stop();
   adv_on = false;
 }

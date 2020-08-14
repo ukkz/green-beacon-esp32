@@ -1,8 +1,8 @@
-# line-simple-beacon-esp32
+# Green Beacon ESP32 Library
 
-LINE Simple Beacon library for ESP32 (Arduino core)
+A BLE beacon library for ESP32 boards on Arduino environment.
 
-This is unofficial library for ESP32 boards, conforming to [LINE Simple Beacon (Official)](https://github.com/line/line-simple-beacon/blob/master/README.en.md).
+This is unofficial library conforming to [LINE Simple Beacon (Official)](https://github.com/line/line-simple-beacon/blob/master/README.en.md).
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ This is unofficial library for ESP32 boards, conforming to [LINE Simple Beacon (
 // Set your hardware ID
 const char hwid[5] = {0x01, 0x23, 0x45, 0x67, 0x89};
 // Create beacon instance
-LineSimpleBeacon beacon = LineSimpleBeacon(hwid);
+GreenBeacon beacon = GreenBeacon(hwid);
 // Set advertise message
 beacon.setMessage("hey");
 // Start advertising
@@ -40,7 +40,7 @@ No need additional installation if you installed [Arduino core for the ESP32](ht
 
 ## API
 
-### LineSimpleBeacon(const char hwid[5], const String device_name = "LINE Simple Beacon")
+### GreenBeacon(const char hwid[5], const String device_name = "LINE Simple Beacon")
 
 `hwid` : Issued LINE Simple Beacon hardware ID. It must be 5 bytes of array.  
 `device_name` : (optional) BLE Device name.
