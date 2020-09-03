@@ -15,15 +15,19 @@
  *    https://developers.line.biz/en/reference/messaging-api/#beacon-event
  */
 
-const char hwid[5] = {0x00, 0x00, 0x00, 0x00, 0x00};
-GreenBeacon beacon = GreenBeacon(hwid);
+const String hwid = "0a1b2c3d4e";
+
+GreenBeacon beacon; // Require in case using globally
 
 void setup() {
-  beacon.setMessage("Hello"); // max 13 bytes
-  beacon.start();
+  beacon = GreenBeacon(hwid, "MyBeacon"); // "MyBeacon" is optional
+  beacon.start(); // start advertising
 }
 
 void loop() {
-  // do something..
-  delay(50);
+  // change message per seconds
+  String mes = String(millis());
+  log_i("setMessage(%s)", mes.c_str());
+  beacon.setMessage(mes);
+  delay(1000);
 }
